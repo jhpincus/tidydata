@@ -113,4 +113,4 @@ Each train and test dataset provided is fragmented into several files: the data 
 * Creating a final tidy data set from the subset containing the average of each variable for each activity and each subject.
 * Writing the final data set to disc as a tab delimited text file.
 
- Comments in the script provide additional information about the process.
+Comments in the script provide additional information about the process.
