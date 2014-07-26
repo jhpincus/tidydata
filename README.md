@@ -20,5 +20,7 @@ Running run_analysis.R will create a directory in the users working directory if
 * Creating a final tidy data set from the subset containing the average of each variable for each activity and each subject.
 * Writing the final data set to disc as a tab delimited text file.
 
- Comments in the script provide additional information about the process.
+The file tidydata.txt is best viewed by reading it inot R with read,table and header = TRUE
+
+Comments in the script provide additional information about the process.
 
