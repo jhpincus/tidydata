@@ -16,7 +16,7 @@ Running run_analysis.R will create a directory in the users working directory if
 * Reading data files into R.
 * Combining files into a single dataset with all columns named.
 * Creating a subset of the combined dataset.
-* RElabeling columns with descriptive names.
+* Relabeling columns with descriptive names.
 * Creating a final tidy data set from the subset containing the average of each variable for each activity and each subject.
 * Writing the final data set to disc as a tab delimited text file.
 
