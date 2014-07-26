@@ -111,6 +111,6 @@ Each train and test dataset provided is fragmented into several files: the data 
 * Creating a subset of the combined data set with columns for subject, activities, and columns for mean and standard deviation.
 * Labeling activities in the subset with descriptive names and relabeling feature column names with more descriptive ones.
 * Creating a final tidy data set from the subset containing the average of each variable for each activity and each subject.
-*Writing the final data set to disc as a tab delimited text file.
+* Writing the final data set to disc as a tab delimited text file.
 
  Comments in the script provide additional information about the process.
