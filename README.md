@@ -9,7 +9,7 @@ The goal of this project is to create an R script that processes a raw dataset i
 
 The data for this project are from a study about human activity recognition using a smartphone data conducted by researchers at UC Irvine.  The project's web page is: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 
-A group of 30 volunteers between the ages of 19 and 48 wore a Samsung Galaxy SII samrtphone on their waist and performed six activities- walking, walking upstairs, walking downstairs, sitting, standing, and layin.).  Three axial linear acceleration and angular velocity measurements were collected from each phone's embedded accelerator and gyroscope and processed to yield the raw data.   The data for all participants ws partitioned it into training (70%) and test (30%) sets.
+A group of 30 volunteers between the ages of 19 and 48 wore a Samsung Galaxy SII samrtphone on their waist and performed six activities- walking, walking upstairs, walking downstairs, sitting, standing, and laying.  Three axial linear acceleration and angular velocity measurements were collected from each phone's embedded accelerator and gyroscope and processed to yield the raw data.   The data for all participants was partitioned it into training (70%) and test (30%) sets.
 
 The data is available in a zip archive at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.  The following files from that archive were used in this project:
 
@@ -29,26 +29,26 @@ The archive also contains a file named features_info.txt which provides informat
 This repo contains:
 
 * CodeBook.md -A description of the variables of the tidy data set.
-* README.md - Thsi readme file
+* README.md - This readme file
 * run_analysis.R An R script that downloads the archive, unzips it, and processes the raw data files to produce  a tidy data set.
 
 **Description of run_analysis.R Operation**
 
-The train and test datasets are ragmented into several files described above in more detail: the data itself, subjects, activities, activity labels, and a list of variables (features),  The script in run_analysis.R creates a subdirectory (tidydata) in the users working directory, downlaods the data and peforms all operations to create a single tidy data set of the average of each variable for each activity and each subject.  The reshape2 package must be installed before running the script.
+The train and test datasets are fragmented into several files described above in more detail: the data itself, subjects, activities, activity labels, and a list of variables (features),  The script in run_analysis.R creates a subdirectory (tidydata) in the users working directory, downloads the data and performs all operations to create a single tidy data set of the average of each variable for each activity and each subject.  The reshape2 package must be installed before running the script.
 
-The UC Irvine study produced 561 features (variables).  The run_analysis.R opertions prouce a tidy data set reduces those to 68 variables for subject, activity, and the average of the mean and standard deviation of each measurement for each subject for each activity.
+The UC Irvine study produced 561 features (variables).  The run_analysis.R operations produce a tidy data set reduces those to 68 variables for subject, activity, and the average of the mean and standard deviation of each measurement for each subject for each activity.
 
 The resahpe2 package must be installed before using the run_analysis script.  The script works by:
 
 * Creating a subdirectory called tidydata in the users working directory if tidydata doesn't exist.
 * Downloading and unzipping the data archive into tidydata and creating a subdirectory called UCI HAR Dataset.
-* Reading files into R for, train and test data, and their respective subject,sactivities, features, and activity labels.
+* Reading files into R for, train and test data, and their respective subject, activities, features, and activity labels.
 * Combining train and test data with their respective values for subjects and activities.
 * Adding column names for subject, activities, and features to the train and test datasets.
 * Merging the train and test datasets vertically to create a single dataframe.
 * Creating a subset of the combined dataframe with columns for subject, activities, and mean and standard deviation for of the features only.
 * Labeling activities column of the subset with descriptive names and relabeling features column names with more descriptive ones.
-* Melting and reshaping the subsetinto a tidy data set containing with the average of each mean and standard deviation for each activity and each subject.
+* Melting and reshaping the subset into a tidy data set containing with the average of each mean and standard deviation for each activity and each subject.
 * Writing the tidy data to disc as a tab delimited text file named tidydata.txt.
 
 Comments in the script provide additional information about the process.
