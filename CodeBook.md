@@ -1,10 +1,13 @@
 ---
 title: "Tidy Data Codebook"
 output: html_document
---- 
+---
+
+This codebook contains three sections: Information about the source of the data and raw data files. description of variables, and a description of the process for cleaning and transforming the data data into a tidy dataframe.
+
 **Data**
 
-The data used to create the tidy data set resulting from the process described below were obtained from experiments conducted at UC Irvine with a group of 30 volunteers between the ages of 19 and 48.  Each person performed six activities (walking, walking Upstairs, walking downstairs, sitting, standing, and laying) wearing a smartphone (Samsung Galaxy S II) on their waists.  Three axial linear acceleration and three axial angular velocity measurements were collected for each participant from the phone's embedded accelerator and gyroscope and processed to yield the data used here.   The researchers collecting the data partitioned it into training (70% of volunteers) and test (30% of volunteers) sets.
+The data used to create the tidy dataframe r were obtained from experiments conducted at UC Irvine with a group of 30 volunteers between the ages of 19 and 48.  Each person performed six activities (walking, walking Upstairs, walking downstairs, sitting, standing, and laying) wearing a smartphone (Samsung Galaxy S II) on their waists.  Three axial linear acceleration and angular velocity measurements were collected from each participant's phone's embedded accelerator and gyroscope and processed to yield the data raw data.   The researchers collecting the data partitioned it into training (70% of volunteers) and test (30% of volunteers) sets.
 
 The data can be downloaded as a zip archive from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.  The archive includes the following files that are relevant to the tidy data set created here:
 
@@ -21,7 +24,7 @@ The archive also contains a file named features_info.txt which provides informat
 
 **Description of Variables**
 
-**subjet** - A number from 1-30 identifying subjects participating in the test. Class - integer.
+**subject** - A number from 1-30 identifying subjects participating in the test. Class - integer.
           
 **activity** - Activities undertaken by subjects. Class - factor, Levels: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING,
                            
@@ -98,19 +101,19 @@ body acceleration jerk magnitude for the frequency domain. Class - numeric.
                             
 **frequencyBodyGyroMagnitudeStd** - Mean of the standard deviation of each subject's means of the body gyro magnitude for the frequency domain. Class - numeric.
 
-**Process for Data Clean up and Transformation**
+**Process for Data Cleaning and Transformation**
 
-Each train and test dataset provided is fragmented into several files: the data itself, subjects, activities, activity labels and a list of variables (feaures),  The script in run_analysis.R creates a subdirectory (tidydata) in the users working directory, downlaods the data and peforms all manipulations to create a single tidy data set of the average of each variable for each activity and each subject.  The reshape2 package must be installed before running the script.  The run_analysis.R script performs the following operations to transform the raw data inot a tidy data:
+Each train and test dataset provided is fragmented into several files: the data itself, subjects, activities, activity labels and a list of variables (features),  The script in run_analysis.R creates a subdirectory (tidydata) in the users working directory, downlaods the data and peforms all operations to create a single tidy data set of the average of each variable for each activity and each subject.  The reshape2 package must be installed before running the script.  The run_analysis.R script performs the following operations:
 
 * Creating a subdirectory called tidydata in the users working directory if tidydata doesn't exist.
 * Downloading and unzipping the data archive creating a new directory called UCI HAR Dataset.
-* Reading files into R for, train and test data, their respective subjects and activities, variables, and activity labels.
-* Combining train and test data with their respective subjects and activities.
-* Adding column names for subject, activities, and features to train and test datasets.
-* Merging train and test datasets vertically to create a single dataset.
-* Creating a subset of the combined data set with columns for subject, activities, and columns for mean and standard deviation.
-* Labeling activities in the subset with descriptive names and relabeling feature column names with more descriptive ones.
-* Creating a final tidy data set from the subset containing the average of each variable for each activity and each subject.
-* Writing the final data set to disc as a tab delimited text file.
+* Reading files into R for, train and test data, their respective subjects and activities, and the variables, and activity labels for the data.
+* Combining train and test data with their respective values for subjects and activities.
+* Adding column names for subject, activities, and features (variables) to train and test datasets.
+* Merging train and test datasets vertically to create a single dataframe.
+* Creating a subset of the combined dataframe with columns for subject, activities, and mean and standard deviation for all variables.
+* Labeling activities in the subset with descriptive names and relabeling variable column names with more descriptive ones.
+* Creating a final tidy dataframe from the subset containing the average of each variable for each activity and each subject.
+* Writing the final dataframe to disc as a tab delimited text file named tidydata.txt.
 
 Comments in the script provide additional information about the process.
