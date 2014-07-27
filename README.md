@@ -9,18 +9,18 @@ This repo includes:
 * An R script run_analysis.R that converts the raw data to a tidy data set.
 * A codebook that describes the raw data files, the variables of the tidy data set, and how the script works.
 
-Running run_analysis.R will create a directory in the users working directory if tidydata doesn't exist and produce a tab delimited file tidydata.txt in the that directory.  Here is a summary of how the script works.  A more detaled description is in the codebook and comments in the script.
+Running run_analysis.R will create a directory named tidydata in the users working directory if it doesn't exist and perform the operaations to produce a tab delimited file tidydata.txt in the that directory.  Here is a summary of how the script works.  A more detaled description is in the codebook and comments in the script.
 
-* Creating a subdirectory called tidydata in the users working directory if tidydata doesn't exist.
-* Downloading and unzipping the data archive.
-* Reading data files into R.
-* Combining files into a single dataset with all columns named.
-* Creating a subset of the combined dataset.
-* Relabeling columns with descriptive names.
-* Creating a final tidy data set from the subset containing the average of each variable for each activity and each subject.
-* Writing the final data set to disc as a tab delimited text file.
+* Creating a subdirectory called tidydata in the users working directory if it doesn't exist.
+* Downloading the data archive with files for data, subjects, activities, and variable names and unzipping it.
+* Reading the files for data, activities, subjects, and variable names into R.
+* Combining files in the previous step into a single dataframe with all columns named.
+* Creating a subset of columns with mean and standard deviation from the combined dataset.
+* Relabeling columns and activities with descriptive names.
+* Reshaping the final tidy dataframe (tidydata.txt)set from the subset into a dataframe containing the average of each variable for each activity and each subject.
+* Writing the tidydata.txt to disc as a tab delimited text file.
 
-The file tidydata.txt is best viewed by reading it inot R with read,table and header = TRUE
+The file tidydata.txt is best viewed by reading it into a variable in R with the read.table function with header = TRUE 
 
 Comments in the script provide additional information about the process.
 
