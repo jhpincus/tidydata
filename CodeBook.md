@@ -116,4 +116,6 @@ Each train and test dataset provided is fragmented into several files: the data 
 * Creating a final tidy dataframe from the subset containing the average of each variable for each activity and each subject.
 * Writing the final dataframe to disc as a tab delimited text file named tidydata.txt.
 
+The file tidydata.txt is best viewed by reading it into a variable in R with the read.table function with header = TRUE
+
 Comments in the script provide additional information about the process.
